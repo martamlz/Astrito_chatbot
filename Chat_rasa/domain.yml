@@ -1,0 +1,402 @@
+intents:
+ - saludar
+ - despedirse
+ - mi_nombre
+ - tema_sol
+ - tema_luna
+ - tema_sistema_solar
+ - tema_constelaciones
+ - tema_asteroides
+ - tema_planeta
+ - tema_satelite
+ - tema_via_lactea
+ - tema_eclipse
+ - tema_meteorito
+ - tema_nebulosa
+ - tema_estrellas
+ - tema_cometa
+ - afirmar
+ - negar
+ - venus
+ - mercurio
+ - planeta
+ - planeta_enano
+ - lluvia_de_estrellas
+ - noche_estrellada
+ - sol_alrededor_planetas
+ - planetas_alrededor_sol
+ - estrella_fugaz
+ - fusion
+ - reaccion
+ - punto_cercano
+ - punto_alejado
+ - distancia_luna
+ - fases_luna
+ - mareas_luna
+ - geografia_luna
+ - mas_brillante
+ - mas_cerca
+ - calendario_luna
+ - despertador_luna
+ - mar_grande
+ - mar_pequeño
+ - tierra
+ - marte
+ - jupiter
+ - saturno
+ - urano
+ - no_atm
+ - pequeño
+ - julio_dia
+ - febrero_dia
+ - quinto
+ - sexto
+ - neptuno
+ 
+actions:
+ - action_nombre
+
+entities:
+ - nombre
+
+slots:
+   nombre:
+     type: text
+     initial_value: "colegui"
+
+responses:
+ utter_saludar:
+  - text: "Hola, cual es tu nombre?"
+ utter_adios:
+  - text: "Adios a ti tambien"
+ utter_def_sol:
+  - text: "El Sol es el objeto central y más importante de nuestro sistema planetario. Es la estrella cuya gravedadmantiene en órbita a los planetas, los asteroides, los planetas enanos, cometas y demás objetos. Irradia (emite) al espacio una enorme cantidad de energía que calienta e ilumina todo a su alrededor, y ya sabes que por esto nunca debes mirarlo directamente. Podemos definirlo como una esfera gaseosa de unos 1 400 000 km de diámetro formada por hidrógeno (70%) y helio (29%). En el núcleo, estos gases están tan comprimidos que la temperatura es tremenda: 15 millones de grados. Es por estas condiciones por lo que se producen reacciones de fusión nuclear en las que el hidrógeno se convierte en helio.Al mirarlo por telescopio nos llama la atención las manchas de su superficie (se deben a que la temperatura de estas zonas es más baja que en sus alrededores)."
+ utter_def_luna:
+  - text: "La Luna es el único satélite natural de la Tierra, gira alrededor de ella y refleja la luz solar. Es importante conocer sus fases, su distancia y tamaño, su geografía y las mareas... "
+ utter_pregunta_1:
+  - text: "Elige uno de los siguientes temas:"
+    buttons:
+     - title: "sol"
+       payload: "/tema_sol"
+     - title: "luna"
+       payload: "/tema_luna"
+     - title: "sistema solar"
+       payload: "/tema_sistema_solar"
+     - title: "constelaciones"
+       payload: "/tema_constelaciones"
+     - title: "asteroides"
+       payload: "/tema_asteroides"
+     - title: "planetas"
+       payload: "/tema_planeta"
+     - title: "satelites"
+       payload: "/tema_satelite"
+     - title: "Vía Láctea"
+       payload: "/tema_via_lactea"
+     - title: "Eclipses"
+       payload: "/tema_eclipse"
+     - title: "Meteoritos"
+       payload: "/tema_meteorito"
+     - title: "Nebulosas"
+       payload: "/tema_nebulosa"
+     - title: "Estrellas"
+       payload: "/tema_estrellas"
+     - title: "Cometas"
+       payload: "/tema_cometa"
+ utter_def_sistema_solar:
+  - text: "Vivimos en un sistema planetario formado por el Sol y los cuerpos celestes que orbitan a su alrededor. El objeto central es nuestra estrella: el Sol, el cuál mantiene a muchos astros y diferentes materiales girando a su alrededor debido a su gran masa y a la gravedad que ejerce sobre estos objetos.Los cuales son: los planetas junto con sus satélites, planetas enanos, asteroides, cometas, polvo y gas interestelar. Está situado en la galaxia llamada Vía Láctea, en uno de los brazos espirales de esta, muy alejado del núcleo. Tarda 225 millones de años en dar una vuelta completa, lo que llamamos año galáctico."
+ utter_def_constelaciones:
+  - text: "Las constelaciones son grupos de estrellas, que si las unimos con líneas imaginarias forman figuras perfectamente identificables en el cielo nocturno. Si miramos hacia el cielo una noche despejada, lejos de las luces urbanas y sin luna, veremos un conjunto enorme de puntos luminosos en los que se hace muy difícil orientarse.Te sonará la constelación de la Osa Mayor, formada por siete estrellas que forman una figura característica, se puede ver un carro, o un cazo con un largo mango. O también la Osa Menor, que forma una figura similar, pero con estrellas menos brillantes; la última estrella del “mango” de esta constelación es la estrella Polar(importantísima para orientarnos, siempre marca el Norte).Tanto la Luna como el Sol, en el camino que vemos que recorren en el curso del día al observar el cielo, pasan por delante de una banda de constelaciones conocidas como constelaciones del zodíaco."
+ utter_def_asteroides:
+  - text: "Los asteroides son un enjambre de cuerpos rocosos cuyas órbitas se sitúan entre la de Marte y la de Júpiter. Sus tamaños varían muchísimo, desde el más grande, Ceres (que ahora ha sido recalificado como planeta enano, al igual que Plutón) hasta los pocos metros en otros muchos. Cuando alguno se acerca lo suficiente a nuestro planeta y es atrapado por su fuerza gravitatoria, la atmósfera lo volatiliza y deja en el cielo un breve rastro brillante, lo que conocemos como estrella fugaz.Puede pasar que, si su tamaño era suficientemente grande, no se llegue a desintegrar del todo y caiga a la superficie terrestre, entonces se convertiría en lo que llamamos meteorito."
+ utter_def_planeta:
+  - text: "Un planeta es un cuerpo celeste sin luz propia que gira en una órbita elípticaalrededor de una estrella. Los planetas que forman el sistema Solar son: Mercurio, Venus, Tierra, Marte, Jupiter, Saturno, Urano, Neptuno."
+ utter_def_satelite:
+  - text: "Un satélite natural es un cuerpo celeste que orbitaalrededor de un planeta, y le acompaña en su órbita alrededor de su estrella. El que mejor conocemos es la Luna, al ser el único satélite natural de la Tierra, perocasi todos los demás planetas del sistema solar (Mercurio y Venus son la excepción) tienen al menos un satélite. Júpiter y Saturno tienen más de sesenta satélites, si los comparamos con la Tierra y Marte que tienen uno y dos respectivamente, es muy grandeesta diferencia.Hay centenares de satélites naturales en el sistema solar, pero desde 1957 también orbitan en el espacio satélites artificiales. Estos satélites creados por el hombre se lanzan con diferentes fines: tomar fotos de la Tierra, el Sol, otrosplanetas, ... explorar el espacio para saber más de los agujeros negros, las estrellas, galaxias lejanas, ... Aunque también los hay para comunicarnos, para conocer el tiempo y la Estación Espacial Internacional."
+ utter_def_via_lactea:
+  - text: "La Vía Láctea es la galaxia en la que vivimos y tiene forma espiral; el Sol junto con los planetas formando el sistema solar están situados en uno de los brazos de la galaxia (se llama brazo de Sagitario, aunque está realmente situado en un ramal de este, el brazo de Orión). Tiene un total de cuatro brazos, dos principales (Escudo-Centauro y Perseo) y dos secundarios (Sagitario y Norma).Las estrellas que se encuentran cerca del centro de la galaxia son viejas y no hay prácticamente formación de nuevas, sin embargo, en los brazos las estrellas suelen ser jóvenes, llenos de nebulosas que siguen dando lugar a nuevos procesos de formación de estrellas. "
+ utter_def_eclipse:
+  - text: "Habrás escuchado hablar de los eclipses, son sucesos espectaculares y extraordinarios, sobre todo los de Sol. Imagina lo que pensarían nuestros antepasados al ver que el sol y su luz desaparecían durante minutos... Los de Luna son menos impresionantes, pero no dejan de ser curiosos de estudiar y de ver. Para que se produzca un eclipse estos tres cuerpos tienen que estar alineados. Eclipses de Sol: en cualquier momento la Luna, iluminada por el Sol, produce un cono de sombra y uno de penumbra (más leve). Dentro del cono de sombra que provoca la Luna no se ve nada de Sol ya que sus rayos quedan obstaculizados. En estos eclipses, el cono de sombra tiene su pico en la superficie de la Tierra, que abarca una zona muy pequeña. Eclipses de Luna: también la Tierra, al ser iluminada por el Sol, produce un cono de sombra y otro de penumbra, y esta vez más grande que el de la Luna dado que su tamaño es considerablemente mayor. Cuando la Luna atraviese este cono de sombra dejará de recibir luz solar y quedará completamente oscurecida, dando lugar a un eclipse lunar.El 19 de diciembre de este mismo año podremos ver desde España un eclipse parcial de Luna"
+ utter_def_meteorito:
+  - text: "Un meteorito es un cuerpo menor del Sistema Solar (hasta los 50m) que alcanza la superficie de un planeta dado que no se llega a desintegrar del todo en la atmósfera. La luminosidad que deja en su camino de desintegración es lo que llamamos meteoro."
+ utter_def_nebulosa:
+  - text: "Las nebulosas se denominaron de esta manera porque al descubrirlas observando el cielo se asemejaban a las nubes de nuestra clásica atmósfera. Se trata en realidad de auténticas nubes, enormes masas de gases y polvo. Algunas de estas son un paso de la evolución de la vida de las estrellas. En su fase final, algunas estrellas expulsan parte de su materia al exterior antes de enfriarse definitivamente; mientras que otras pueden contraerse, colapsar y dar origen a nuevas estrellas. Distinguimos cinco tipo de nebulosas: las nebulosas de emisión, que emiten su propia luz; las de reflexión que únicamente reflejan la luz de las estrellas de su interior;  también las hay oscuras, en las que su materia oscuro es polvo que ni emite ni refleja la luz; las nebulosas planetarias, que se forman cuando en la fase final de una estrella las capas exteriores se separan del núcleo de esta y, por último, tenemos las nebulosas restos de supernovas; originadas en la muerte de las estrellas más masivas, que producen una gigantesca explosión."
+ utter_def_estrella:
+  - text: "Una estrella es una enorme esfera de gas en revolución. Es un cuerpo celeste en el que debido al calor y la presión que experimenta su núcleo, se originan reacciones nucleares que liberan energía a su exterior. Esta energía se emite en forma de luz, de calor y de radiación electromagnética. Todas las estrellas están formadas por hidrógeno (70%) y helio (28%).Las estrellas se agrupan formando galaxias(como el Sol, que pertenece a la Vía Láctea), unidas por su atracción gravitacional. Y, por su parte, las galaxias están gravitacionalmente unidas entre siformando grupos de galaxias (nuestra Vía Láctea pertenece al grupo Local)."
+ utter_def_cometa:
+  - text: "Desde la superficie terrestre vemos los cometascon dos partes diferentes: un extremo muy brillante (la cabeza) seguida de una larga cola. Estas figuras tan llamativas, rápidas e inesperadas, en el pasado generaban grandes temores, siendo interpretados como la advertencia de la venida de una gran desgracia. En realidad, son pequeños objetos irregulares (unos pocos km de tamaño) de órbitas muy excéntricas. Cuando están lejos del Sol permanecen inactivos,pero al acercarse, el calor hace que parte de éste se sublime (pase de sólido directamente a gas) y forme la brillante cola que mencionamos anteriormente. Cuando pasa por su periheliova dejando motas de polvo y puede terminar incluso siendo un resto inactivo- asteroide. Estas motas de polvo quedan en órbita alrededor del Sol y si la Tierra en su giro al Sol anual atraviesa una zona donde hay muchas, significará que muchas atravesarán la atmósfera y se convertirán en estrellas fugaces"
+ utter_pregunta_2:
+  - text: "Quieres contestar una pregunta: "
+    buttons:
+     - title: "si"
+       payload: "/afirmar"
+     - title: "no"
+       payload: "/negar"
+ utter_pregunta_sol:
+  - text: "Cual es el planeta mas cercano al Sol: "
+    buttons:
+     - title: "venus"
+       payload: "/venus"
+     - title: "mercurio"
+       payload: "/mercurio"
+ utter_pregunta_incorrecta:
+  - text: "Noooooo"
+ utter_pregunta_correcta:
+  - text: "Siiiiiii"
+ utter_pregunta_luna:
+  - text: "Vemos toda la Luna desde la Tierra? "
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_pregunta_sistema_solar:
+  - text: "Es Plutón un planeta o un planeta enano? "
+    buttons:
+     - title: "Planeta"
+       payload: "/planeta"
+     - title: "Planeta enano"
+       payload: "/planeta_enano"
+ utter_pregunta_constelacion:
+  - text: "Es, por tanto, la Vía Láctea una constelación ¿? "
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_pregunta_asteroide:
+  - text: "Cómo se llaman las noches donde se pueden ver muchas estrellas fugaces ¿? "
+    buttons:
+     - title: "Lluvia de estrellas"
+       payload: "/lluvia_de_estrellas"
+     - title: "Noches estrelladas"
+       payload: "/noche_estrellada"
+ utter_pregunta_planeta:
+ - text: "Qué gira alrededor de qué ¿? "
+   buttons:
+    - title: "Los planetas alrededor del sol"
+      payload: "/planetas_alrededor_sol"
+    - title: "El sol alrededor de los planetas"
+      payload: "/sol_alrededor_planetas"
+ utter_pregunta_satelite:
+  - text: "Existen satélites más grandes que la tierra?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_pregunta_viaLactea:
+  - text: "Existen más galaxías en el universo ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_pregunta_eclipse:
+  - text: "Con lo visto acerca del cono de sombra y de penumbra, crees que los eclipses se ven desde cualquier punto del planeta ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_pregunta_meteorito:
+  - text: "Cómo son llamados comunmente los meteoros ¿?"
+    buttons:
+     - title: "Cometas"
+       payload: "/tema_cometa"
+     - title: "Estrellas fugaces"
+       payload: "/estrella_fugaz"
+ utter_pregunta_nebulosa:
+  - text: "Es el sol una de las llamadas estrellas masivas ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_pregunta_estrella:
+  - text: "Como se le llama al fenómeno que tiene lugar en el nucleo de las estrellas ¿?"
+    buttons:
+     - title: "Fusion"
+       payload: "/fusion"
+     - title: "Reaccion"
+       payload: "/reaccion"
+ utter_pregunta_cometa:
+  - text: "Qué significa que el cometa pase por el perihelio de su órbita ¿?"
+    buttons:
+     - title: "Que está en el punto más cercano al sol"
+       payload: "/punto_cercano"
+     - title: "Que está en el punto más alejado del sol"
+       payload: "/punto_alejado"
+ utter_quieres_subtema_luna:
+  - text: "Quieres alguno de estos temas, sino marca salir"
+    buttons:
+     - title: "Distancia a la luna"
+       payload: "/distancia_luna"
+     - title: "Fases de la luna"
+       payload: "/fases_luna"
+     - title: "Mareas"
+       payload: "/mareas_luna"
+     - title: "Geografía lunar"
+       payload: "/geografia_luna"
+     - title: "Salir"
+       payload: "/negar"
+ utter_def_distancia_luna:
+  - text: "Sabemos que la Luna está más cerca de la Tierra que del Sol porque en los eclipses se interpone entre nosotros y nuestra estrella. Nos separa una distancia de 384400km; para que te pongas en situación, en la separación de la Tierra y la Luna cabrían todos los planetas de nuestro sistema solar. El diámetro de la Luna es 12742km, un cuarto del diámetro de la Tierra."
+ utter_def_fases_luna:
+  - text: "La Luna pasa por cuatro fases: luna nueva, cuarto creciente, luna llena, cuarto menguante. En la primera etapa el satélite está muy oscuro (luna nueva), no vemos nada, después va apareciendo una franja en el borde derecho que va creciendo poco a poco hasta que en cuarto creciente su mitad derecha está iluminada. Este lado visible va haciéndose más y más grande hasta completar el círculo completo → luna llena. Según pasan más días, el lado derecho se va oscureciendo hasta que en cuarto menguante vemos iluminada esta vez la mitad izquierda. Este lado va haciéndose más y más pequeño hasta llegar de nuevoa la llamada luna nueva.
+Desde una luna nueva a la siguiente, transcurren entre 29 y 30 días. La medida exacta, según mediciones modernas, es: 29 días 12 horas 44 minutos 3 segundos ≈ 29,54 días."
+ utter_def_mareas_luna:
+  - text: "En los puertos de las costas oceánicas se observan las subidas y bajadas de las aguas del mar.En promedio, hay dos mareas altas y dos mareas bajas cada día. ¿A qué se debe esto? A que la Luna está muy cerca de la Tierra, tanto que se nota una pequeña diferencia de su tirón gravitatorio sobre ésta. Este tirón es más intenso en los puntos de la superficie que están más cerca de ella, y menor en los más alejados. Y esto, lo notan más los fluidos que los sólidos por lo que así se provocan las mareas."
+ utter_def_geografia_luna:
+  - text: "Al observar la Luna con un telescopio podemos ver que se distinguen en su superficie dos tipos de accidentes: los cráteres y los mares. Los cráteres, causados por el choque de algún meteorito, predominan en las zonas más claras de la Luna; son circulares, rodeados de un borde montañoso y, a veces, tienen un pico central. Los mares, sin embargo, son más oscuros (de ahí ese nombre), formados por basalto y producidos también por el choque de meteoritos, pero de tamaño tan grande, que la corteza se fundió en el lugar del impacto y parte del magma volcánico provocado se derramó por la superficie.
+Siempre vemos la misma cara de la Luna, nunca nos deja ver su cara oculta. Esto ocurre debido a su rotación sincrónica: el satélite emplea el mismo tiempo en una traslación completa alrededor de la tierra que en una rotación en torno a su propio eje."
+ utter_pregunta_distancia_luna: 
+  - text: "¿Por qué si la luna solo es cuatro veces más pequeña que la Tierra, (por tanto, mucho más pequeña que nuestra estrella), en el cielo la vemos de un tamaño parecido al del Sol?"
+    buttons:
+     - title: "Porque es más brillante"
+       payload: "/mas_brillante"
+     - title: "Porque esta más cerca"
+       payload: "/mas_cerca"
+ utter_pregunta_fases_luna:
+  - text: "Para qué les era útil a nuestros antepasados el ciclo lunar ¿?"
+    buttons:
+     - title: "Como calendario"
+       payload: "/calendario_luna"
+     - title: "Como desperador"
+       payload: "/despertador_luna"
+ utter_pregunta_mareas_luna:
+  - text: "POr qué las mareas son mas suaves en el mar Mediterraneo ¿?"
+    buttons:
+     - title: "Porque es un mar pequeño"
+       payload: "/mar_pequeño"
+     - title: "Porque es un mar grande"
+       payload: "/mar_grande"
+ utter_pregunta_geografia_luna:
+  - text: "El punto más alto de la luna es más alto que el de la Tierra ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_quieres_subtema_sistema_solar:
+  - text: "Quieres alguno de estos temas, sino marca salir"
+    buttons:
+     - title: "Mercurio"
+       payload: "/mercurio"
+     - title: "Venus"
+       payload: "/venus"
+     - title: "Tierra"
+       payload: "/tierra"
+     - title: "Marte"
+       payload: "/marte"
+     - title: "Jupiter"
+       payload: "/jupiter"
+     - title: "Saturno"
+       payload: "/saturno"
+     - title: "Urano"
+       payload: "/urano"
+     - title: "Neptuno"
+       payload: "/neptuno"
+     - title: "Salir"
+       payload: "/negar"
+ utter_def_mercurio_sistema_solar:
+  - text: "Es el planeta más cercano al Sol. No tiene atmósfera ya que es muy pequeño, su masa es reducida y, por tanto, su gravedad superficial no es suficiente para retener a su alrededor gases y crear una atmósfera, además, al estar tan cerca del Sol estos gases están muy calientes. Por tanto, nada le protege de los pequeños cuerpos que caen hacia él, por eso su superficie está llena de cráteres de impacto.
+• Temperatura superficial oscila brutalmente entre -180o y 450oC
+• Diámetro: 4879,4 km
+• Rotación: 59 días
+• Traslación: 88 días"
+ utter_pregunta_mercurio_sistema_solar:
+  - text: " Por qué crees que su temperatura varía tanto del día a la noche de Mercurio ¿?"
+    buttons:
+     - title: "Porque no tiene atmosfera"
+       payload: "/no_atm"
+     - title: "Porque es muy pequeño"
+       payload: "/pequeño"
+ utter_def_venus_sistema_solar:
+  - text: " Este planeta tiene una densa atmósfera de dióxido de carbono, por lo que solo nos deja ver sus nubes y la presencia tan grande de este elemento provoca un intenso efecto invernadero, de forma que la temperatura es bastante constante y ronda los 480oC. Su superficie es bastante plana, y las zonas más elevadas reciben el nombre de continentes (aunque está claro que no hay agua líquida, imposible a esas temperaturas)
+• Diámetro: 12104 km
+• Rotación: 243,187 días
+• Traslación: 224 días ¿?"
+ utter_def_tierra_sistema_solar:
+  - text: "Nuestro planeta, el planeta azul, presenta algunas características especiales: sus océanos de agua, una atmósfera formada por nitrógeno y oxígeno, gran actividad geológica y el hecho de ser el único en el que se ha desarrollado vida inteligente. En su superficie destaca la presencia de la hidrosfera, agua en estado líquido que se recicla cíclica y constantemente. Los componentes de nuestra atmósfera permiten que la temperatura media se mantenga en las condiciones adecuadas, unos 18oC; estos también se reciclan continuamente, gracias a la fotosíntesis y a la respiración de los seres vivos.
+• Diámetro: 12742 km
+• Rotación: 23 horas 56 minutos 4 segundos
+• Traslación: 365 días 6 horas"
+ utter_pregunta_tierra_sistema_solar:
+  - text: " Qué hacemos con las 6 horas de más que tarda la Tierra en completar su vuelta al Sol? ¿?"
+    buttons:
+     - title: "Añadir un dia en julio cada cuatro años"
+       payload: "/julio_dia"
+     - title: "Añadir un dia en febrero cada cuatro años"
+       payload: "/febrero_dia"
+ utter_def_marte_sistema_solar:
+  - text: "Este planeta es el mejor estudiado. Es característico por su tono rojizo, el cual se debe a la presencia de óxidos de hierro, lo que lleva a suponer que en algún tiempo muy pasado hubo agua abundante. Su atmósfera es muy tenue y varia bastante con las estaciones, vientos y tormentas de polvo.
+• Temperatura: temperatura media de -63oC. Oscila entre los 30oC en verano y los -
+140oC de los polos en invierno.
+• Diámetro: 6779 km
+• Rotación: 24 horas 37 minutos 22 segundos
+• Traslación: Casi dos años → 1 año 322 días
+• Satélites: 2 → Phobos y Deimos: ambos muy pequeños y de forma no"
+ utter_pregunta_marte_sistema_solar:
+  - text: " Hay alguna misión ahora mismo para explorar Marte ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_def_jupiter_sistema_solar:
+  - text: "El gigante de los planetas. Destaca que no tiene ninguna superficie sólida y solo podemos ver su densa atmósfera. Su rápida rotación hace que su achatamiento (aplastamiento) por los polos sea fácilmente observable. Además, se pueden diferenciar bandas paralelas al ecuador (oscuras o claras) donde los vientos son muy rápidos. Tiene 79 satélites, aunque mencionaremos los descubiertos por Galileo en 1610: Ío, Europa, Ganímedes, Calisto.
+• Temperatura: tiene una media de -121,15oC. La más baja -163,15oC y la más alta -75,15oC
+• Diámetro: nada menos que 139820 km
+• Rotación: 9 horas 56 min
+• Traslación: 11 años y 314 días"
+ utter_pregunta_jupiter_sistema_solar:
+  - text: " En orden de cercania al sol, que posicion ocupa este planeta ¿?"
+    buttons:
+     - title: "Es el quinto"
+       payload: "/quinto"
+     - title: "Es el sexto"
+       payload: "/sexto"
+ utter_def_saturno_sistema_solar:
+  - text: "Es el más llamativo para su observación telescópica, debido a sus anillos. ¡Están formados por pequeñas partículas de agua helada! También, junto con ellos, hay pequeños satélites conocidos como “lunas pastoras” (parecen mantener en orden el rebaño). Tiene bandas atmosféricas alrededor del ecuador, como Júpiter (aunque menos visibles), es bastante parecido a este planeta. Vistos a día de hoy, tiene un total de 81 satélites (Mimas, Titán, Hiperión, Japeto, ...)
+• Temperatura: una mínima de -191,15oC y máxima de -130,15oC (está ya muy alejado del Sol)
+• Diámetro: 116460 km
+• Rotación: 10 horas 42 minutos
+• Traslación: 29 años y 256 días"
+ utter_pregunta_saturno_sistema_solar:
+  - text: "Es este planeta muy caliente ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_def_urano_sistema_solar:
+  - text: "A este planeta se le califica como gigante de hielo y es muy difícil de ver a simple vista; ¡no fue descubierto hasta 1781! Su eje de rotación está muy inclinado, 98o, es decir, casi gira en el plano de la elipse que forma su órbita. También presenta unos débiles anillos y unos cuantos
+satélites (27).
+• Temperatura: muy muy frío, temperatura media de -216oC
+• Diámetro: 51118 km
+• Rotación: 17 horas 14 minutos
+• Traslación: 84 años y 4 días"
+ utter_pregunta_urano_sistema_solar:
+  - text: "Ha pisado el hombre algún planeta en la historia de la humanidad ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+ utter_def_neptuno_sistema_solar:
+  - text: "Neptuno es el planeta más alejado del Sol. Su atmósfera es de un bonito color azul violáceo y tiene bandas paralelas al ecuador bien marcadas. Similar a Urano, atmósfera pequeña y núcleo rocoso. Este planeta tiene 14 satélites conocidos y el más grande es Tritón (por mucho).
+• Temperatura: es el planeta más frío, con una media de -220oC
+• Diámetro: 49244 km
+• Rotación: 16 horas 6 minutos
+• Traslación: 164 años 298 días"
+ utter_pregunta_neptuno_sistema_solar:
+  - text: "Es fácil explorar Neptuno y obtener datos de él ¿?"
+    buttons:
+     - title: "Si"
+       payload: "/afirmar"
+     - title: "No"
+       payload: "/negar"
+  
+session_config:
+ carry_over_slots_to_new_session: true
+ session_expiration_time: 400

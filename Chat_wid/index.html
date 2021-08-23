@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Chatbot Widget</title>
+    
+    <link rel="stylesheet" 
+    type="text/css"
+    href="style2.css">
+    
+  </head>
+  
+  <body>
+    <div class="contenedor">
+      <div class="widget">
+        <div class="chat_cabecera">
+          <span class="chat_cabecera_titulo">Astrito</span>
+        </div>
+        <div class="chats" id="chats">
+          <div class="clearfix"></div>
+        </div>
+        <div class="teclado">
+          <textarea
+            id="userInput"
+            placeholder="Escribe un mensaje..."
+            class="usrInput"
+          ></textarea>
+          <div id="sendButton">
+            <div style="background-color: red;width: 10px;height: 10px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Para el js -->
+    <!-- Para ver si con esto funciona el jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script> 
+    <script type="text/javascript" src="js/showdown.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/materialize.min.js"
+    ></script>
+    <script src="js/uuid.min.js"></script>
+  </body>
+</html>
