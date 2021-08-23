@@ -5,7 +5,11 @@ This project consists in an educative chatbot with the objective of teach astron
 This project has one branch: develop1. It has two differentiated parts: one with the chatbot programmation in Rasa and the another one is about the programation of the widget.
 
 ## How to clone
-
+Use the next command to clone this repository in your computer:
+    ```
+    git clone https://github.com/martamlz/Astrito_chatbot.git
+    ```
+    
 ## Installation
 To run this program you have to follow the next steps:
 * Remember you need to have set up Rasa on your computer
