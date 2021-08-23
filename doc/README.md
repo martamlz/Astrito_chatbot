@@ -21,4 +21,4 @@ To run this program you have to follow the next steps:
 
 ## Preview
 This assistant has to look like this and then... time to learn!
-![](./doc/preview.png)
+![](https://raw.githubusercontent.com/martamlz/Astrito_chatbot/develop1/doc/preview.png)
