@@ -6,7 +6,7 @@ function scrollToBottomOfResults() {
 }
 
 function setUserResponse(message){
-    const user_response =`<img class="userAvatar" src='./img/userAvatar.jpg'><p class="userMsg">${message} </p><div class="clearfix"></div>`;
+    const user_response =`<p class="userMsg">${message} </p><div class="clearfix"></div>`;
     $(user_response).appendTo(".chats").show("slow");
     
     $(".usrInput").val("");
@@ -16,7 +16,7 @@ function setUserResponse(message){
 
 
 function getBotResponse(text) {
-    botResponse = `<img class="botAvatar" src="./img/astrito_avatar.png"/><span class="botMsg">${text}</span><div class="clearfix"></div>`;
+    botResponse = `<div class="botBox"><span class="botMsg">${text}</span></div><div class="clearfix"></div>`;
     return botResponse;
 }
 
@@ -26,9 +26,9 @@ function setBotResponse(response) {
     setTimeout(() => {
         if (response.length < 1) {
             // if there is no response from Rasa, send  fallback message to the user
-            const fallbackMsg = "I am facing some issues, please try again later!!!";
+            const fallbackMsg = "Lo siento amiga, estoy teniendo problemas, intentalo más tarde!!";
 
-            const BotResponse = `<img class="botAvatar" src="./img/astrito_avatar.png"/><p class="botMsg">${fallbackMsg}</p><div class="clearfix"></div>`;
+            const BotResponse = `<div class="botBox"><p class="botMsg">${fallbackMsg}</p></div><div class="clearfix"></div>`;
 
             $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
             scrollToBottomOfResults();
@@ -52,7 +52,7 @@ function setBotResponse(response) {
                         else {
                             // if no markdown formatting found, render the text as it is.
                             if (!botResponse) {
-                                botResponse = `<img class="botAvatar" src="./img/astrito_avatar.png"/><p class="botMsg">${response[i].text}</p><div class="clearfix"></div>`;
+                                botResponse = `<div class="botBox"><p class="botMsg">${response[i].text}</p></div><div class="clearfix"></div>`;
                             }
                         }
                         // append the bot response on to the chat screen

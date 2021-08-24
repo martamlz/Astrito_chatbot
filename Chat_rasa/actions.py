@@ -6,7 +6,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-class Accion_Nombre(Action):
+class action_nombre(Action):
 
  def name(self) -> Text:
   return "action_nombre"
