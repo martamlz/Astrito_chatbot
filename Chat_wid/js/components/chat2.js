@@ -22,10 +22,9 @@ function getBotResponse(text) {
 
 //Respuesta del bot
 function setBotResponse(response) {
-    // renders bot response after 500 milliseconds
     setTimeout(() => {
         if (response.length < 1) {
-            // if there is no response from Rasa, send  fallback message to the user
+            // Si no hay respuesta de Rasa
             const fallbackMsg = "Lo siento amiga, estoy teniendo problemas, intentalo más tarde!!";
 
             const BotResponse = `<div class="botBox"><p class="botMsg">${fallbackMsg}</p></div><div class="clearfix"></div>`;
@@ -33,49 +32,41 @@ function setBotResponse(response) {
             $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
             scrollToBottomOfResults();
         } else {
-            // if we get response from Rasa
+            // Si tenemos respuesta
             for (let i = 0; i < response.length; i += 1) {
                 // check if the response contains "text"
                 if (Object.hasOwnProperty.call(response[i], "text")) {
                     if (response[i].text != null) {
-                        // convert the text to mardown format using showdown.js(https://github.com/showdownjs/showdown);
+                        // Convertimos el texto a markdown usando: showdown.js(https://github.com/showdownjs/showdown);
                         let botResponse;
                         let html = converter.makeHtml(response[i].text);
                         html = html.replaceAll("<p>", "").replaceAll("</p>", "").replaceAll("<strong>", "<b>").replaceAll("</strong>", "</b>");
                         html = html.replace(/(?:\r\n|\r|\n)/g, '<br>')
                         console.log(html);
-                        // check for blockquotes
+
                         if (html.includes("<blockquote>")) {
                             html = html.replaceAll("<br>", "");
                             botResponse = getBotResponse(html);
                         }
                         else {
-                            // if no markdown formatting found, render the text as it is.
                             if (!botResponse) {
                                 botResponse = `<div class="botBox"><p class="botMsg">${response[i].text}</p></div><div class="clearfix"></div>`;
                             }
                         }
-                        // append the bot response on to the chat screen
                         $(botResponse).appendTo(".chats").hide().fadeIn(1000);
                     }
                 }
 
-                // check if the response contains "buttons"
+                // Miramos si la respuesta contiene botones
                 if (Object.hasOwnProperty.call(response[i], "buttons")) {
                     if (response[i].buttons.length > 0) {
                         addSuggestion(response[i].buttons);
                     }
                 }
 
-                // check if the response contains "custom" message
+                // Miramos si la respuesta contiene acciones personalizadas
                 if (Object.hasOwnProperty.call(response[i], "custom")) {
                     const { payload } = response[i].custom;
-                    if (payload === "quickReplies") {
-                        // check if the custom payload type is "quickReplies"
-                        const quickRepliesData = response[i].custom.data;
-                        showQuickReplies(quickRepliesData);
-                        return;
-                    }
                 }
             }
             scrollToBottomOfResults();
@@ -95,7 +86,7 @@ function send(message) {
         success(botResponse, status) {
             console.log("Response from Rasa: ", botResponse, "\nStatus: ", status);
 
-            // if user wants to restart the chat and clear the existing chat contents
+            // si el usuario quiere empezar de nuevo la conversación
             if (message.toLowerCase() === "/restart") {
                 $("#userInput").prop("disabled", false);
                 return;
@@ -105,23 +96,52 @@ function send(message) {
         error(xhr, textStatus) {
             if (message.toLowerCase() === "/restart") {
                 $("#userInput").prop("disabled", false);
-                // if you want the bot to start the conversation after the restart action.
-                // actionTrigger();
-                // return;
             }
 
-            // if there is no response from rasa server, set error bot response
+            // si no hay respuesta de rasa
             setBotResponse("");
-            console.log("Error from bot end: ", textStatus);
+            console.log("Error: ", textStatus);
         },
     });
 }
 
+// Si el usuario presiona el botón de enviar
 $("#sendButton").on("click", (e) => {
     const text = $(".usrInput").val();
     $(".suggestions").remove();
     $(".usrInput").blur();
     setUserResponse(text);
     send(text);
+    return false;
+});
+
+// Si el usuario presiona enter
+$(".usrInput").on("keyup keypress", (e) => {
+    const keyCode = e.keyCode || e.which;
+
+    const text = $(".usrInput").val();
+    if (keyCode === 13) {
+        if (text === "" || $.trim(text) === "") {
+            e.preventDefault();
+            return false;
+        }
+        $(".suggestions").remove();
+        $(".usrInput").blur();
+        setUserResponse(text);
+        send(text);
+        return false;
+    }
+    return true;
+});
+
+function restartConversation() {
+    $("#userInput").prop("disabled", true);
+    $(".chats").html("");
+    $(".usrInput").val("");
+    send("/restart");
+}
+
+$("#restartButton").on("click", (e) => {
+    restartConversation();
     return false;
 });

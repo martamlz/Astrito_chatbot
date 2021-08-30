@@ -1,7 +1,3 @@
-/**
- *  adds vertically stacked buttons as a bot response
- * @param {Array} suggestions buttons json array
- */
 function addSuggestion(suggestions) {
     setTimeout(() => {
         const suggLength = suggestions.length;
@@ -11,7 +7,7 @@ function addSuggestion(suggestions) {
             .appendTo(".chats")
             .hide()
             .fadeIn(1000);
-        // Loop through suggestions
+        // Bucle
         for (let i = 0; i < suggLength; i += 1) {
             $(
                 `<div class="menuChips" data-payload='${suggestions[i].payload}'>${suggestions[i].title}</div>`,
@@ -22,7 +18,7 @@ function addSuggestion(suggestions) {
 }
 
 
-// on click of suggestion's button, get the title value and send it to rasa
+// si clickamos en alguno de los botones
 $(document).on("click", ".menu .menuChips", function () {
     const text = this.innerText;
     const payload = this.getAttribute("data-payload");
@@ -30,6 +26,6 @@ $(document).on("click", ".menu .menuChips", function () {
     setUserResponse(text);
     send(payload);
 
-    // delete the suggestions once user click on it.
+    // las borramos una vez pulsadas
     $(".suggestions").remove();
 });

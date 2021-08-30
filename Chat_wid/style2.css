@@ -31,6 +31,14 @@ body{
   margin-left: 35%;
 }
 
+.restartText {
+  color: #86a86e;
+  float: left;
+  margin-top: 0%;
+  margin-left: 25%;
+  font-size: 10px;
+}
+
 .chats {
   height: 275px;
   padding: 2px;
@@ -113,6 +121,16 @@ blockquote {
   float: right;
   cursor: pointer;
   color: #6d7e9a;
+}
+
+#restartButton {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  color: #86a86e;
+  position: absolute;
+  top: 10px;
+  left: 265px;
 }
 
 .userAvatar {
